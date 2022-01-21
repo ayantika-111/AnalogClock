@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0.">
+	<title></title>
+	<!-- <link rel="stylesheet" type="text/css" href="clock_index.css"> -->
+	<!-- <script type="text/javascript" src="clock_index.js"></script> -->
+	<style type="text/css">
+
+    body{
+    background: url(https://beyondmainstream.org/wp-content/uploads/2020/02/RippleSpaceTime.jpg);
+}
+
+	#clockContainer{
+	position: relative;
+	width: 40vw;
+	height: 40vw;
+  /*  height: 440px;
+    width: 402px;*/
+	/*border: 2px solid blue;*/
+	margin: auto;
+	/*background: url(https://lh3.googleusercontent.com/proxy/Bgdrb8iqdQINeb2I4EcVbq2odMRPsu5jZRa0cVOtXFsBgLfr03wyyNv-lOApwFn2EO-T2HaXN6qYC0DlsTL-DAEDuDUXXJ4) no-repeat;*/
+	/*background: url(https://lh3.googleusercontent.com/proxy/mnK8KEPewXqcecfW5EixKhCJ90SvoIGfLacEkyiFxzqYgUEQx-fWpVPPOwVhIbVInGpu7ZA5PjAu_iThPUnq46duvubIH5lOJwFv7XqiLTmc) no-repeat;*/
+	background: url(https://lh4.googleusercontent.com/proxy/jSwmkvz9WETJSs-r9ZLoPEe5jcL50ZTw8_EGMdJHI73Z5DOAbaukFy2tjuta4obbcJR3CMKoDAK-yUrRpAApAE2Rkw=s0-d) no-repeat;
+	background-size: 100%;
+}
+
+#hour, #minute, #second{
+	position: absolute;
+	border-radius: 2px;
+	background: black;
+}
+
+#hour{
+    width: 1.6%;
+    height: 29%;
+    top: 20%;
+    left: 48.5%;
+    opacity: 0.8;
+    transform-origin: bottom;
+      /*display: none;*/
+}
+
+#minute{
+    width: 1.2%;
+    height: 33%;
+    top: 15%;
+    left: 48.61%;
+    opacity: 0.8;
+    transform-origin: bottom;
+    /*display: none;*/
+}
+
+#second{
+	width: .9%;
+    height: 39.7%;
+    top: 9%;
+    left: 48.7%;
+    opacity: 0.8;
+    transform-origin: bottom;
+    /*display: none;*/
+}
+	</style>
+	
+	<script type="text/javascript">
+		setInterval(()=>{
+	d = new Date();
+	htime=d.getHours();
+	mtime=d.getMinutes();
+	stime=d.getSeconds();
+	hrotation = 30*htime + mtime/2;
+	mrotation = 6*mtime;
+	srotation = 6*stime;
+	hour.style.transform= `rotate(${hrotation}deg)`;
+	minute.style.transform= `rotate(${mrotation}deg)`;
+	second.style.transform= `rotate(${srotation}deg)`;
+    },1000);
+	</script>
+</head>
+
+<body>
+	<!-- <img src="https://cdn.picpng.com/clock/clock-clipart-31297.png"> -->
+    <div id="clockContainer">
+    	<div id="hour"></div>
+    	<div id="minute"></div>
+    	<div id="second"></div>
+    </div>
+
+</body>
+</html>
